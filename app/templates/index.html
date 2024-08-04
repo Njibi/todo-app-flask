@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- <link rel="stylesheet" href="login.html"> -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./../static/to-do-list.png" alt="BHU HELP Logo">
+            </div>
+        </div>
+
+        <div class="container">
+            <h1>To-do App</h1>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('main.login') }}">Login</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h2>Stay Organized with Our To-do App</h2>
+            <p>Manage your tasks efficiently and never miss a deadline again. Add, track, and complete your daily tasks with ease.</p>
+            <button onclick="learnMore()"><a href="{{ url_for('main.dashboard') }}">App</button></a>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container-top">
+            <h2>Features</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <h3>Task Categorization</h3>
+                    <p>Organize your tasks into different categories like Work, Personal, and Shopping.</p>
+                </div>
+                <div class="feature">
+                    <h3>Due Dates and Reminders</h3>
+                    <p>Set due dates and receive reminders to stay on top of your tasks.</p>
+                </div>
+                <div class="feature">
+                    <h3>Priority Levels</h3>
+                    <p>Assign priority levels to your tasks to focus on what's important.</p>
+                </div>
+                <div class="feature">
+                    <h3>Search and Filter</h3>
+                    <p>Quickly find tasks using search and filter options.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="section">
+        <div class="container">
+            <h2>Benefits</h2>
+            <ul class="benefits-list">
+                <li>
+                    <i class="fas fa-chart-line"></i>
+                    <p>Increased Productivity</p>
+                </li>
+                <li>
+                    <i class="fas fa-clock"></i>
+                    <p>Better Time Management</p>
+                </li>
+                <li>
+                    <i class="fas fa-smile"></i>
+                    <p>Stress Reduction</p>
+                </li>
+                <li>
+                    <i class="fas fa-tasks"></i>
+                    <p>Improved Task Tracking</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form method="post" >
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Feedback:</label>
+                <textarea id="Feedback" name="Feedback" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Todo App. All rights reserved.</p>
+        </div>
+    </footer>
+ 
+    <script>
+        function learnMore() {
+             window.location.href = "#features";
+        }
+    </script>
+</body>
+</html>
+

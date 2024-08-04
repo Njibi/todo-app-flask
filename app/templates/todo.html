@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO APP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='script.js') }}"> -->
+</head>
+<body>
+    
+    <div class="container">
+        <h1>
+            <marquee>Student To-Do App</marquee>
+        </h1>
+            <div class="logo">
+                <img src="./../static/to-do.gif" alt="BHU HELP Logo">
+            </div>
+        <div class="input-container">
+            <form action="{{ url_for('main.add_task') }}" method="post">
+            <input type="text" id="taskInput" placeholder="Add a new task" name="title"/>
+            <button onclick="addTask()">Add</button>
+        </form>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
