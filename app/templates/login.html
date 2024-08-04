@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- BHU HELP -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='script.js') }}">
+  </head>
+  <body class="place">
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="{{ url_for('main.register') }}" method="post">
+          <input type="text" placeholder="username" required  id="username" name="username"/>
+          <input type="text" placeholder="Matric Number" required id="matricNumber" name="matricNumber"/>
+          <input type="password" placeholder="Password" required id="password"  name="password"/>
+          <input type="text" placeholder="email" required id="email"  name="email"/>
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <input type="submit" value="Signup" />
+        </form>
+      </div>
+
+      <div class="form login">
+        <header class ="log_header" >Login</header>
+        <form action="{{ url_for('main.login') }}"method="post">
+          <input type="text" placeholder="username" required />
+          <input type="password" placeholder="Password" required />
+          <a href="#">Forgot password?</a>
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+<script>
+    const wrapper = document.querySelector(".wrapper"),
+    signupHeader = document.querySelector(".signup header"),
+      loginHeader = document.querySelector(".login header");
+
+    loginHeader.addEventListener("click", () => {
+    wrapper.classList.add("active");
+});
+    signupHeader.addEventListener("click", () => {
+    wrapper.classList.remove("active");
+});
+
+</script>
+    
+    </section>
+  </body>
+</html>
